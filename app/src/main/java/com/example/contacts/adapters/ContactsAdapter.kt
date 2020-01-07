@@ -1,8 +1,6 @@
 package com.example.contacts.adapters
 
 import android.content.Context
-import android.nfc.Tag
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -30,8 +28,7 @@ class ContactsAdapter(private val context : Context, val contacts : List<Contact
 
     inner class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         fun setData(contact : Contact?) {
-            Glide
-                .with(context)
+            Glide.with(context)
                 .load(contact!!.Picture)
                 .into(itemView.imageView_picture)
             itemView.textView_name.text = contact.Name
