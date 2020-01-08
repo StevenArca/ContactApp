@@ -2,9 +2,10 @@ package com.example.contacts.features
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.contacts.BaseActivity
 import com.example.contacts.R
 
-class ContactsActivity : AppCompatActivity() {
+class ContactsActivity : BaseActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
