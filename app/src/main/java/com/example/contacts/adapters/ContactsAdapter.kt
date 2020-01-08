@@ -12,6 +12,7 @@ import butterknife.BindView
 import butterknife.ButterKnife
 import com.bumptech.glide.Glide
 import com.example.contacts.R
+import com.example.contacts.features.PhoneFunction
 import com.example.contacts.models.Contact
 
 class ContactsAdapter(private val context : Context, val contacts : List<Contact>) : RecyclerView.Adapter<ContactsAdapter.MyViewHolder>() {
@@ -42,11 +43,12 @@ class ContactsAdapter(private val context : Context, val contacts : List<Contact
     }
 
     inner class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-        var currentContact : Contact? = null
+        private var currentContact : Contact? = null
 
         init {
+            var phoneFunc = PhoneFunction()
             itemView.setOnClickListener {
-                Toast.makeText(context, currentContact!!.Name, Toast.LENGTH_SHORT).show()
+                phoneFunc.makePhoneCall(context, currentContact!!.ContactNo)
             }
         }
 
